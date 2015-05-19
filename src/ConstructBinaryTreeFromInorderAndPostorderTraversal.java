@@ -21,7 +21,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 		if(inorder.length != postorder.length){
 			return null;
 		}
-		return myBuildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length);
+		return myBuildTree(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
 	}
 	
 	public int findPosition(int[] arr, int start, int end, int key){
