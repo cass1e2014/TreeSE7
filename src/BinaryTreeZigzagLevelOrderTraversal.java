@@ -25,7 +25,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 		
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.offer(root);
-		int h = 0;
+		int h = 0;//用来记录单双行数
 		
 		while(!queue.isEmpty()){
 			int size = queue.size();

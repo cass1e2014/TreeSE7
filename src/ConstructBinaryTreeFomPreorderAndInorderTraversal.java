@@ -19,7 +19,7 @@ public class ConstructBinaryTreeFomPreorderAndInorderTraversal {
 		if(preorder.length != inorder.length){ //如果inorder喝preorder的长度不相等
 			return null;
 		}
-		return myBuildTree(inorder, 0, inorder.length - 1, preorder, 0, preorder.length -1);
+		return myBuildTree(inorder, 0, inorder.length - 1, preorder, 0, preorder.length - 1);
 	}
 	
 	//helper method. Find what is the position of "root(in preorder)" now is in inorder 
@@ -33,7 +33,7 @@ public class ConstructBinaryTreeFomPreorderAndInorderTraversal {
 	}
 	
 	public TreeNode myBuildTree(int[] inorder, int instart, int inend, int[] preorder, int prestart, int preend){
-		//首先写跳出recustion的条件
+		//首先写跳出recuion的条件
 		if(instart > inend){
 			return null;
 		}

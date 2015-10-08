@@ -56,7 +56,7 @@ public class PostorderTraversal {
 			TreeNode curr = stack.peek();
 			// go down the tree, check if current node is leaf. if so, process
 			// it and pop stack or going down
-			if (prev == null || prev.left == null || prev.right == null) {
+			if (prev == null || prev.left == curr || prev.right == curr) {
 				if (curr.left != null) {
 					stack.push(curr.left);
 				} else if (curr.right != null) {

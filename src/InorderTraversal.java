@@ -39,7 +39,7 @@ public class InorderTraversal {
 		inorderTraversalHelper(root.right, result);
 	}
 	
-	//while-stack
+	//while-stack (存parent推进left）
 	public List<Integer> inroderTraversalII(TreeNode root){
 		List<Integer> res = new ArrayList<Integer>();
 		if(root == null){

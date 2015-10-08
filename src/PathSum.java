@@ -11,6 +11,10 @@
  *        /  \      \
  *       7    2      1
  * return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
+ * 
+ * Time: o(n)
+ * Space: o(logn)
+ * 
  * @author cassie9082
  *
  */
@@ -27,7 +31,8 @@ public class PathSum {
 	}
 	
 	public boolean hasPathSum(TreeNode root, int sum) {
-		if(root == null || sum < 0){
+		//这里不能把sum小于0加到判断条件里面，因为有可能node的value是负数，-2， -3 之和为-5
+		if(root == null){
 			return false;
 		}
 		//跳出recusion的条件！

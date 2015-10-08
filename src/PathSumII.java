@@ -31,9 +31,9 @@ public class PathSumII {
 
 	public ArrayList<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		if(root == null || sum < 0){
+		if(root == null){
 			return result;
-		}
+		}//sum could be negative
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		pathSumHelper(root, sum, list, result);
 		return result;
@@ -47,8 +47,8 @@ public class PathSumII {
 		
 		if(sum - root.val == 0 && root.left == null && root.right == null){
 			list.add(root.val);//加最后的一个node
-			result.add(new ArrayList<Integer>(list));
-			list.remove(list.size()); //不建议直接remove掉那个值，可能之前的node会有相同的值，这里用index
+			result.add(new ArrayList<Integer>(list));//记得要new一个新的list obj
+			list.remove(list.size() - 1); //不建议直接remove掉那个值，可能之前的node会有相同的值，这里用index
 		}
 		
 		list.add(root.val);//加非最后的node

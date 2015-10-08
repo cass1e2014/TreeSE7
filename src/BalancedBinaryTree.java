@@ -20,12 +20,12 @@ public class BalancedBinaryTree {
 
 	public boolean isBalanced(TreeNode root) {
 		if (root == null){
-			return false;
+			return true;
 		}
 		return maxDepth(root) != -1;
 	}
 	
-	//每个点往下传进入recrsion，node下没有child return0，有任一小孩return1， 最最左child和最最右child的差不能大于1，若大于1，则给上一层返回－1
+	//每个点往下传进入recrsion，node下没有child return 0，有任一小孩return 1， 最最左child和最最右child的差不能大于1，若大于1，则给上一层返回－1
 	public int maxDepth(TreeNode root){
 		if(root == null){
 			return 0;
