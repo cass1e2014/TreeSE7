@@ -14,7 +14,7 @@ public class ConstructBinaryTreeFomPreorderAndInorderTraversal {
 			value = x;
 		}
 	}
-	
+	//Time: O(N^2) Space: O(N)
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
 		if(preorder.length != inorder.length){ //如果inorder喝preorder的长度不相等
 			return null;

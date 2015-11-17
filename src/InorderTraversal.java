@@ -33,7 +33,6 @@ public class InorderTraversal {
 		if(root == null){
 			return;
 		}
-		
 		inorderTraversalHelper(root.left, result);
 		result.add(root.value);
 		inorderTraversalHelper(root.right, result);
@@ -51,7 +50,7 @@ public class InorderTraversal {
 		while(!stack.empty() || curr != null){
 			//if it is not null, push it to the stack, and go down the tree to the left
 			if(curr != null){
-				stack.push(curr.left);
+				stack.push(curr);
 				curr = curr.left; //move the most left
 			}else{
 				TreeNode t = stack.pop(); 

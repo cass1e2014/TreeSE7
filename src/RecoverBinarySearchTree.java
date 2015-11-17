@@ -5,40 +5,47 @@
 public class RecoverBinarySearchTree {
 
 	public class TreeNode {
-		int value;
+		int val;
 		TreeNode left, right;
 
 		public TreeNode(int x) {
-			value = x;
+			val = x;
 			left = null;
 			right = null;
 		}
 	}
 
-	private TreeNode firstElement = null;
-	private TreeNode secondElement = null;
-	private TreeNode lastElement = new TreeNode(Integer.MIN_VALUE);
-
-	public void recoverTree(TreeNode root) {
-		// traverse and get two elements
-		traverse(root);
-		// swap
-		int temp = firstElement.value;
-		firstElement.value = secondElement.value;
-		secondElement.value = temp;
-	}
-
-	public void traverse(TreeNode root) {
-		if (root == null) {
-			return;
-		}
-		traverse(root.left);
-		//首先移动到最左边node，因为方向是从树的底部往上走，所以之前node的值应该小于当前node的值 （inorder？？？）
-		if(firstElement == null && root.value < lastElement.value){
-			firstElement = lastElement;
-			secondElement = root;
-		}
-		lastElement = root; //移动lastElement从tree的底部往上走
-		traverse(root.right);
-	}
-}
+	TreeNode lastNode;
+    TreeNode firstElement;
+    TreeNode secondElement;
+    public void recoverTree(TreeNode root) {
+        lastNode = null;
+        firstElement = null;
+        secondElement = null;
+        inorder(root);
+        if(firstElement != null && secondElement != null){
+            int tmp = firstElement.val;
+            firstElement.val = secondElement.val;
+            secondElement.val = tmp;
+        }
+    }
+    
+    public void inorder(TreeNode root){
+        if(root == null){
+            return;
+        }
+        
+        inorder(root.left);
+        if(lastNode == null){
+            lastNode = root;//lastNode初始化
+        }else{
+            if(lastNode.val > root.val){
+                if(firstElement == null){
+                    firstElement = lastNode;
+                }
+                secondElement = root;
+            }
+            lastNode = root;
+        }
+        inorder(root.right);
+    }}

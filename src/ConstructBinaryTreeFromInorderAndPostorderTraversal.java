@@ -17,6 +17,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
 		}
 	}
 	
+	//Time: O(N^2) Space: O(N)
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
 		if(inorder.length != postorder.length){
 			return null;
