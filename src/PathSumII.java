@@ -49,6 +49,7 @@ public class PathSumII {
 			list.add(root.val);//加最后的一个node
 			result.add(new ArrayList<Integer>(list));//记得要new一个新的list obj
 			list.remove(list.size() - 1); //不建议直接remove掉那个值，可能之前的node会有相同的值，这里用index
+			//**[0,1,1] and 1 --> return, [[0,1],[0,1]]
 		}
 		
 		list.add(root.val);//加非最后的node

@@ -14,6 +14,7 @@ import java.util.Queue;
     \     \
      5     4       <---
  * 
+ * You should return [1, 3, 4]
  * @author cassie9082
  * 
  */

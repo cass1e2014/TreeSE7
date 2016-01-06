@@ -24,14 +24,14 @@ public class ValidateBinarySearchTree {
 	int lastNodeValue = Integer.MAX_VALUE;
 	boolean firstNode = true;
 	public boolean isValidBST(TreeNode root) {
-		if(root == null)	return false;
+		if(root == null)	return true;
 		//一路往下到达最左边
 		if(!isValidBST(root.left))		return false;
 		//不是第一个node && 上一层的node的val比当前node的val大，违背了bst，返回false
 		if(!firstNode && lastNodeValue >= root.val)		return false;
 		lastNodeValue = root.val;
 		firstNode = false;
-		if(isValidBST(root.right))		return false;
+		if(!isValidBST(root.right))		return false;
 		return true;
 	}
 }

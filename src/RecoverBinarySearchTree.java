@@ -48,4 +48,5 @@ public class RecoverBinarySearchTree {
             lastNode = root;
         }
         inorder(root.right);
-    }}
+    }
+ }

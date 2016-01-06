@@ -26,12 +26,12 @@ import java.util.Stack;
  * 
  */
 public class BinaryTreeUpsideDown {
-    //原左节点变为了父节点，原父节点变味了有节点，
+    //原左节点变为了父节点，原父节点变味了右节点，
     public TreeNode upsideDownBinaryTree(TreeNode root) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
         if(root == null)    return null;
         while(root.left != null){
-            stack.push(root);
+            stack.push(root);//stack只是用来存最左边的node
             root = root.left;
         }
         stack.push(root);
